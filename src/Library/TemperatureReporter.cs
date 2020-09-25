@@ -2,7 +2,7 @@ using System;
 
 namespace Observer
 {
-    public class TemperatureReporter
+    public class TemperatureReporter : IObserver
     {
         private bool first;
         private Temperature last;
@@ -17,7 +17,7 @@ namespace Observer
 
         public void StopReporting()
         {
-            this.provider.Unsubscribe(this);
+            this.provider.UnSubscribe(this);
         }
 
         public void Update()
